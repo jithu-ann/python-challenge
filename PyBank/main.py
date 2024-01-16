@@ -69,7 +69,7 @@ with open(PyBankcsv, newline="") as csvfile:
 
 OutputFile = os.path.join('.', 'Resources', 'Analysis.txt')
 with open(OutputFile, "w") as text:
-    text.write(" Analysis"+ "\n")
+    text.write(" Financial Analysis"+ "\n")
     text.write("-----------------------------------------------------\n")
     text.write("Total Months:" + str(count)+"\n")
     text.write("Total Profits: " + "$" + str(TotalProfit)+"\n")
