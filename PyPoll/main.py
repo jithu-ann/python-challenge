@@ -5,12 +5,17 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 election_data = os.path.join('.', 'Resources', 'election_data.csv')
 
+#for storing the data
+
 count={}
 
 with open(election_data) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     
     csv_header = next(csvreader)
+
+    #counting the votes
+
     for row in csvreader:
         count[row[2]] = count.get(row[2], 0) + 1
     TotalVotes = sum(count.values())

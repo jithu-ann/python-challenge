@@ -3,10 +3,14 @@ import csv
 
 PyBankcsv = os.path.join("Resources","budget_data.csv")
 
+#storing the data
+
 profit = []
 Monthly_Changes = []
 date=[]
- 
+
+ #variable initialisation
+
 count=0
 TotalProfit=0
 total_change_profits =0
@@ -23,7 +27,7 @@ with open(PyBankcsv, newline="") as csvfile:
 
   
       date.append(row[0])
-
+#append the profit
       profit.append(row[1])
       TotalProfit = TotalProfit + int(row[1])
       total_months=len(date)
@@ -34,6 +38,9 @@ with open(PyBankcsv, newline="") as csvfile:
 
       total_change_profits = total_change_profits + monthly_change_profits
       InitialProfit = final_profit
+
+      #couldnt get the exact value of Average Change by using the below code as it shows some error. so make it as a comment
+       
       #for x in range(1, len(profit)):
        # Monthly_Changes.append((int(profit[x])-int(profit[x-1])))
       #average_change_profit=sum(Monthly_Changes)/len(Monthly_Changes)
@@ -42,7 +49,7 @@ with open(PyBankcsv, newline="") as csvfile:
 
       average_change_profits=(total_change_profits/count)
 
-    
+    #maximum and minimum profit and the dates
       GreatestIncrease_profit = max(Monthly_Changes)
       GreatestDecrease_profit = min(Monthly_Changes)
 
