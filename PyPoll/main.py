@@ -30,7 +30,7 @@ with open(election_data) as csvfile:
     print("-----------------------------")
     print(f'Winner: {winner}')
     print("-----------------------------------")
-OutputFile = os.path.join('.', 'Resources', 'Analysis.txt')
+OutputFile = os.path.join('.', 'Analysis', 'Analysis.txt')
 
 with open(OutputFile, "w") as text:
     text.write("Election Results\n")

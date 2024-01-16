@@ -66,9 +66,8 @@ with open(PyBankcsv, newline="") as csvfile:
     print("Greatest Increase in Profits: " + str(date_increase) + " ($" + str(GreatestIncrease_profit) + ")")
     print("Greatest Decrease in Profits: " + str(date_decrease) + " ($" + str(GreatestDecrease_profit) + ")")
   
-
-OutputFile = os.path.join('.', 'Resources', 'Analysis.txt')
-with open(OutputFile, "w") as text:
+OutputFile=os.path.join('.','Analysis','Analysis.txt')
+with open(OutputFile,"w") as text:
     text.write(" Financial Analysis"+ "\n")
     text.write("-----------------------------------------------------\n")
     text.write("Total Months:" + str(count)+"\n")
