@@ -11,18 +11,11 @@ with open(election_data) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     
     csv_header = next(csvreader)
-
-#creates a dictionary counting votes for each candidate
     for row in csvreader:
         count[row[2]] = count.get(row[2], 0) + 1
-
-#adds all the values in the dictionary to calculate total votes
     TotalVotes = sum(count.values())
 
-#finds the candidate with the most number of votes and saves the key
     winner = max(count, key=count.get)
-
-    #prints out all results
     print("Election Results")
     print("--------------------------")
     print(f'Total Votes: {TotalVotes}')
@@ -32,8 +25,6 @@ with open(election_data) as csvfile:
     print("-----------------------------")
     print(f'Winner: {winner}')
     print("-----------------------------------")
-
-#create an output file
 OutputFile = os.path.join('.', 'Resources', 'Analysis.txt')
 
 with open(OutputFile, "w") as text:
